@@ -20,7 +20,7 @@ html,body{
 @media (max-width:450px){
     .containerProfile{
         
-        width: 100%;
+        width: 80%;
     }
     .nameStyle{
     font-family: 'Nunito', sans-serif;
