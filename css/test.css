@@ -1,0 +1,343 @@
+html,body{
+    height:100% !important;
+
+}
+
+.sideNav{
+    /*background-color: #294356;*/
+    position: relative;
+    background: url('../images/hexagon-metrology-hero.jpg') bottom no-repeat,url('../images/hexagon-metrology-hero.jpg') top no-repeat;
+    
+    
+   
+    
+}
+.sideNav a{
+    padding: 0px !important;
+    border-bottom: 1px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ddd;
+    cursor: pointer;
+}
+.navFont{
+    font-family: 'Josefin Slab', serif;
+    font-size: 24px;
+    padding-left: 30px;
+    text-align: right;
+}
+.logo{
+
+    color: white;
+}
+.customFont{
+    font-family: 'Josefin Slab', serif;
+}
+.customFont1{
+    font-family: Georgia, serif;
+    color: #832c73;
+}
+.customFontStyle{
+    font-family: Georgia, serif;
+}
+.navFooter{
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    width:100%;
+    
+}
+.navFooter a{
+    border:none;
+    background-color: transparent !important;
+}
+
+
+.content{
+    height:100%;
+    position:relative;
+}
+
+.bold{
+    font-weight:700;
+}
+.albumYear{
+    display: none;
+}
+.division{
+    display:none;
+}
+.tabs a{
+    cursor: pointer;
+}
+.mySlides {
+
+    display:none;}
+
+.centerDiv{
+    font-size:16px;
+    width:100%;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    
+    
+}
+.centerDiv h2{
+    font-family: 'Josefin Slab', serif;
+    font-weight:bold;
+}
+.overflow{
+    overflow:auto;
+}
+.navBar{
+    position: fixed;
+    width: 100%;
+}
+/*
+.prevBtn
+{
+    top:0;
+    bottom: 0;
+    position: absolute;
+    left:0px;
+    max-height: 34px;
+    margin: auto;
+}
+.nextBtn{
+    position: absolute;
+    right: 0px;
+    top:0;
+    bottom: 0;
+    max-height: 34px;
+    margin: auto;
+}
+*/
+
+.prevBtn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.nextBtn{
+    position: absolute;
+    top:50%;
+    right:0px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.slideModel{
+   position: relative;
+    max-height: 70%;
+}
+.slideCloseBtn{
+    position: absolute;
+    padding: 10px !important;
+    right: 0px;
+    color: white;
+}
+.slideDim{
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+    width: auto;
+    margin-top: 100px;
+    
+}
+.imageDim{
+    background: teal;
+   width: auto;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.popup{
+    display: none;
+}
+.modPos{
+   width: 100% !important;
+    height: 100% !important;
+    display: none;
+    background-color:rgba(0,0,0,0.5);
+    position:fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+.cursor{
+    cursor: pointer;
+}
+.whiteFont{
+    color: white;
+}
+.mailId{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+.relPos{
+    position: relative !important;
+}
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../images/loader/2.gif) center no-repeat #fff;
+}
+
+@media (max-width:1366px) and (min-width:992px){
+    .centerDiv{
+    font-size:16px;
+    width:100%;
+    position:absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-height:90%;
+    }
+}
+@media (max-width:992px){
+    .centerDiv{
+        font-size:16px;
+    width:100%;
+    position:absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-height:100%;
+    }
+}
+
+.homesection{
+    background-image:url(../images/footer/1.png);
+    background-position:bottom right;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+        blockquote {
+font-family: Georgia, serif;
+font-size: 36px;
+font-style: italic;
+
+margin: 0.25em 0;
+padding: 0.25em 20px;
+line-height: 1.45;
+position: relative;
+color: #383838;
+}
+
+        blockquote:before {
+display: block;
+content: "\201C";
+font-size: 80px;
+position: absolute;
+left: -20px;
+top: -20px;
+color: #7a7a7a;
+}
+
+        blockquote1 {
+font-family: Georgia, serif;
+font-size: 18px;
+font-style: italic;
+
+margin: 0.25em 0;
+padding: 0.25em 20px;
+line-height: 1.45;
+position: relative;
+color: #383838;
+}
+
+        blockquote1:before {
+display: block;
+content: "\201C";
+font-size: 40px;
+position: absolute;
+left: -20px;
+top: -20px;
+color: #7a7a7a;
+}
+
+.zeroMargin{
+    margin: 5px !important;
+}
+.contactIcons{
+    padding-bottom: 5px !important;
+}
+
+.tabHeight{
+    min-height: 600px;
+}
+
+.footerImg{
+    background-image: url(../images/footer/5.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.container{
+    height: auto;
+    width: auto;
+    padding: 0px !important;
+    
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.imageStyle{
+    
+   max-height: 80vh;
+}
+@media (max-width:600px){
+    .imageStyle{
+   max-height: 40vh;
+}
+}
+
+.prevBtn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.nextBtn{
+    position: absolute;
+    top:50%;
+    right:0px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.pop{
+    
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.clsBtn{
+    color: white;
+    font-size: 56px !important;
+    font-family: Segoe UI Light;
+}
+.clsBtn:hover{
+    color: white;
+}
