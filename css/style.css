@@ -29,6 +29,24 @@ a{
     
     font-size: 54px;
 }
+.nameStyle1{
+    font-family: 'Nunito', sans-serif;
+    
+   
+}
+
+.vertAlign{
+    width: 100%;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+.vertAlignMain{
+    
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+}
 .marginTop{
  margin-top: 100px;   
 }
@@ -45,8 +63,17 @@ a{
 }
 }*/
 .cntrDiv{
+    
+}
+.cntrDiv1{
    
-    margin-top: 100px;
+    width: 60%;
+    height: 40%;
+    background-color: aquamarine;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .cover{
     height: 100%;
@@ -70,29 +97,33 @@ a{
     color: white;
     
 }
+.headerColor{
+    background-color: #2c3136;
+    color: white;
+}
 .navigation a{
     cursor: pointer;
 }
-@media screen and (max-width: 450px){
-    .navigation{
-    width: 100% !important;
-        height: auto;
-        background-color:#2c3136;
-        color: white;
-               }
-     .imgStyle{
- width: 80%;
-    height: 80%;
-    
-}
-    .nameStyle{
-    font-family: 'Nunito', sans-serif;
-    font-size: 24px;
-              }  
-    .marginTop{
- margin-top: 100px;   
-}
-}
+    @media screen and (max-width: 450px){
+        .navigation{
+        width: 100% !important;
+            height: auto;
+            background-color:#2c3136;
+            color: white;
+                   }
+         .imgStyle{
+     width: 80%;
+        height: 80%;
+
+    }
+        .nameStyle{
+        font-family: 'Nunito', sans-serif;
+        font-size: 24px;
+                  }  
+        .marginTop{
+     margin-top: 100px;   
+    }
+    }
 @media (max-width:600px) and (min-width:450px){
     .imgStyle{
  width: 60%;
@@ -105,10 +136,16 @@ a{
               }
 }
 
-@media (min-width:600px) and (max-width:829px){
+@media (min-width:600px) and (max-width:1312px){
     .nameStyle{
     font-family: 'Nunito', sans-serif;
     font-size: 32px;
               }
     
+}
+
+@media screen and (max-width: 992px){
+    .logo{
+        display: none;
+    }
 }
