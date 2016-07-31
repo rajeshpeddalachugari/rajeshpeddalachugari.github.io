@@ -17,6 +17,9 @@ p,li{
 .previewImage{
     width: 50%;
 }
+.author{
+    margin: 0px 4px !important;
+}
 @media only screen and (max-width:600px){
    .previewImage{
     width: 100%;
