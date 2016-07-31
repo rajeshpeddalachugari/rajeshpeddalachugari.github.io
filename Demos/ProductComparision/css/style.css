@@ -99,7 +99,9 @@ html,body{
     padding: 4px 0px 4px 4px;
 }
 .titleMargin1{
-    padding: 4px 0px 4px 4px;
+    padding: 0px 0px 0px 4px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 @media only screen and (max-width:992px) and (min-width:600px){
@@ -112,7 +114,9 @@ html,body{
     padding: 4px 0px 0px 4px;
 }
     .titleMargin1{
-    padding: 4px 0px 4px 4px;
+    padding: 0px 0px 0px 4px;
+     margin-top: 0px !important;
+    margin-bottom: 0px !important;
         
 }
     

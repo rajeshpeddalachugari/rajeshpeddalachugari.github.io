@@ -30,7 +30,7 @@
 
                 var image = $(this).siblings(".productImg").attr('src');
 
-                $(".comparePan").append('<div id="' + productID + '" class="relPos titleMargin w3-margin-bottom   w3-col l3 m4 s4"><div class="w3-white titleMargin"><a class="selectedItemCloseBtn w3-closebtn cursor">&times</a><img src="' + image + '" alt="image" style="height:100px;"/><span id="' + productID + '" class="titleMargin1">' + displayTitle + '</span></div></div>');
+                $(".comparePan").append('<div id="' + productID + '" class="relPos titleMargin w3-margin-bottom   w3-col l3 m4 s4"><div class="w3-white titleMargin"><a class="selectedItemCloseBtn w3-closebtn cursor">&times</a><img src="' + image + '" alt="image" style="height:100px;"/><p id="' + productID + '" class="titleMargin1">' + displayTitle + '</p></div></div>');
             }
         } else {
             list.splice($.inArray(productID, list), 1);
@@ -82,7 +82,7 @@
     /*function to remove item from preview panel*/
     $(document).on('click', '.selectedItemCloseBtn', function () {
 
-        var test = $(this).siblings("span").attr('id');
+        var test = $(this).siblings("p").attr('id');
         $('[data-title=' + test + ']').find(".addToCompare").click();
         hideComparePanel();
     });
