@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/w3.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/prism.js"></script>
+    <script src="https://use.fontawesome.com/2c969839cf.js"></script>
+</head>
+
+<body>
+    <div class="w3-container w3-yellow">
+        <div class="w3-row">
+            <div class="w3-col l2 s2 ">
+                <div class="w3-container w3-margin-top">
+                    <img src="images/logo3.png" style="width:50px;">
+                </div>
+            </div>
+            <div class="w3-col l6 s12">
+                <header class="w3-container">
+                    <h1>Add Products for comparision - jQuery</h1>
+                </header>
+            </div>
+            <div class="w3-col l2 s12">
+                <div class="w3-container">
+                    <a href="../../Demos/ProductComparision/" target="_blank" class="w3-btn w3-pink w3-margin-top">Demo</a>
+                    <a href="download/ProductComparision.zip" class="w3-btn w3-teal w3-margin-top">Download</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="w3-container  w3-light-grey">
+        <p><i class="fa fa-calendar w3-padding-right" aria-hidden="true"></i>7/Jul/2016</p>
+        <h3>This jQuery plugin helps users to select products for comparision</h3>
+        <div class="w3-container">
+            <h3><b>Creating HTML content</b></h3>
+            <p>This section consists of three parts : </p>
+            <ul>
+                <li>Creating markup for products</li>
+                <li>Creating preview panel</li>
+                <li>Creating popup to view items selected for comparision</li>
+            </ul>
+            <h4><b>Creating markup for products</b></h4>
+            <p>Use data-* attribute to add properties to product for ex: use <span class="w3-tag w3-teal">data-title</span> to add title of product</p>
+            <pre><code class="language-html">
+        &lt;div class="selectProduct w3-padding" data-title="Nexus5" data-id="Nexus 5" data-size="4.9" "  data-weight="130 g" data-processor="2.3 GHz, Quad Core, Qualcomm Snapdragon 800" data-battery="2300 mAH">
+        &lt;a class="w3-btn-floating w3-light-grey addButtonCircular addToCompare">+&lt;/a>
+        &lt;img src="images/nexus5.jpg" class="imgFill productImg">
+        &lt;h4>Nexus 5&lt;/h4>
+        &lt;/div>
+        
+        
+        </code></pre>
+            <div class="w3-container w3-center">
+                <img src="images/banner.PNG" style="width:100%">
+            </div>
+            <h4><b>Creating Preview Panel</b></h4>
+            <p>This preview panel helps to preview the selected items </p>
+            <pre><code class="language-html">
+&lt;div class="w3-container  w3-center">
+    &lt;div class="w3-row w3-card-4 w3-grey w3-round-large w3-border comparePanle w3-margin-top">
+        &lt;div class="w3-row">
+            &lt;div class="w3-col l9 m8 s6 w3-margin-top">
+                &lt;h4>Added for comparison&lt;/h4>
+            &lt;/div>
+            &lt;div class="w3-col l3 m4 s6 w3-margin-top">
+                &nbsp;
+                &lt;button class="w3-btn w3-round-small w3-white w3-border notActive cmprBtn" disabled>Compare&lt;/button>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class=" titleMargin w3-container comparePan">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>    </code></pre>
+            <pre><code class="language-css">
+            .comparePanle{
+                position: fixed;
+                bottom: 10px;
+                width:90%;
+                left:50%;
+                transform: translateX(-50%);
+                display: none;
+                z-index: 3;
+            }
+            @media only screen and (min-width:993px){
+                .comparePanle{
+                position: fixed;
+                bottom: 10px;
+                width:50%;
+                left:50%;
+                transform: translateX(-50%);
+                display: none;
+                z-index: 3;
+               }
+             }
+            </code></pre>
+            <p> here "comparePan" css class is used to append items to the preview panel</p>
+            <div class="w3-container w3-center">
+                <img src="images/previewpanel.PNG" class="previewImage">
+            </div>
+            <h4><b>Creating Comparision popup</b></h4>
+            <p>This pop is full screen popup which is used to view the comparision of products</p>
+            <p> modal popup is created using W3.css framework. and css class is <span class="w3-tag w3-teal">w3-modal</span></p>
+            <pre><code class="language-html">
+              &lt;div id="id01" class="w3-animate-zoom w3-white w3-modal modPos">
+                &lt;div class="w3-container">
+                &lt;a onclick="document.getElementById('id01').style.display='none'" class="whiteFont w3-padding w3-closebtn closeBtn">&times;&lt;/a>
+                &lt;/div>
+                &lt;div class="w3-row contentPop w3-margin-top">
+                &lt;/div>
+              &lt;/div>
+            </code></pre>
+            <div class="w3-container w3-center">
+                <img src="images/comparepanel.PNG" style="width:100%">
+            </div>
+            <h3><b>jQuery part</b></h3>
+            <h4><b>Method to select product for comparision and add them to preview panel</b></h4>
+            <pre><code class="language-javascript">
+             /* function to be executed when product is selected for comparision*/
+
+    $(document).on('click', '.addToCompare', function () {
+        $(".comparePanle").show();
+        $(this).toggleClass("rotateBtn");
+        $(this).parents(".selectProduct").toggleClass("selected");
+        var productID = $(this).parents('.selectProduct').attr('data-title');
+
+        var inArray = $.inArray(productID, list);
+        if (inArray < 0) {
+            if (list.length > 2) {
+                $("#WarningModal").show();
+                $("#warningModalClose").click(function () {
+                    $("#WarningModal").hide();
+                });
+                $(this).toggleClass("rotateBtn");
+                $(this).parents(".selectProduct").toggleClass("selected");
+                return;
+            }
+
+            if (list.length < 3) {
+                list.push(productID);
+
+                var displayTitle = $(this).parents('.selectProduct').attr('data-id');
+
+                var image = $(this).siblings(".productImg").attr('src');
+
+                $(".comparePan").append('&lt;div id="' + productID + '" class="relPos titleMargin w3-margin-bottom   w3-col l3 m4 s4"&gt;&lt;div class="w3-white titleMargin"&gt;&lt;a class="selectedItemCloseBtn w3-closebtn cursor"&gt;&times&lt;/a&gt;&lt;img src="' + image + '" alt="image" style="height:100px;"/&gt;&lt;span id="' + productID + '" class="titleMargin1"&gt;' + displayTitle + '&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;');
+            }
+        } else {
+            list.splice($.inArray(productID, list), 1);
+            var prod = productID.replace(" ", "");
+            $('#' + prod).remove();
+            hideComparePanel();
+
+        }
+        if (list.length > 1) {
+
+            $(".cmprBtn").addClass("active");
+            $(".cmprBtn").removeAttr('disabled');
+        } else {
+            $(".cmprBtn").removeClass("active");
+            $(".cmprBtn").attr('disabled', '');
+        }
+
+    });
+            </code></pre>
+            <h4><b>Method to add selected products to comparision panel</b></h4>
+            <pre><code class="language-javascript">
+             $(document).on('click', '.cmprBtn', function () {
+        if ($(".cmprBtn").hasClass("active")) {
+            /* this is to print the  features list statically*/
+            $(".contentPop").append('&lt;div class="w3-col s3 m3 l3 compareItemParent relPos">' + '&lt;ul class="product">' + '&lt;li class=" relPos compHeader">&lt;p class="w3-display-middle">Features&lt;/p>&lt;/li>' + '&lt;li>Title&lt;/li>' + '&lt;li>Size&lt;/li>' + '&lt;li>Weight&lt;/li>' + '&lt;li class="cpu">Processor&lt;/li>' + '&lt;li>Battery&lt;/li>&lt;/ul>' + '&lt;/div>');
+
+            for (var i = 0; i < list.length; i++) {
+                /* this is to add the items to popup which are selected for comparision */
+                product = $('.selectProduct[data-title="' + list[i] + '"]');
+                var image = $('[data-title=' + list[i] + ']').find(".productImg").attr('src');
+                var title = $('[data-title=' + list[i] + ']').attr('data-id');
+                /*appending to div*/
+                $(".contentPop").append('&lt;div class="w3-col s3 m3 l3 compareItemParent relPos">' + '&lt;ul class="product">' + '&lt;li class="compHeader">&lt;img src="' + image + '" class="compareThumb">&lt;/li>' + '&lt;li>' + title + '&lt;/li>' + '&lt;li>' + $(product).data('size') + '&lt;/li>' + '&lt;li>' + $(product).data('weight') + '&lt;li class="cpu">' + $(product).data('processor') + '&lt;/li>' + '&lt;li>' + $(product).data('battery') + '&lt;/ul>' + '&lt;/div>');
+            }
+        }
+        $(".modPos").show();
+    });
+            </code></pre>
+            <h4><b>actions to be performed when comparision popup is closed</b></h4>
+            <pre><code class="language-javascript">
+            $(document).on('click', '.closeBtn', function () {
+        $(".contentPop").empty();
+        $(".comparePan").empty();
+        $(".comparePanle").hide();
+        $(".modPos").hide();
+        $(".selectProduct").removeClass("selected");
+        $(".cmprBtn").attr('disabled', '');
+        list.length = 0;
+        $(".rotateBtn").toggleClass("rotateBtn");
+    });
+
+            </code></pre>
+            <h4><b>remove items from preview panel</b></h4>
+            <pre><code class="language-javascript">
+             /*function to remove item from preview panel*/
+                $(document).on('click', '.selectedItemCloseBtn', function () {
+                 var test = $(this).siblings("span").attr('id');
+                 $('[data-title=' + test + ']').find(".addToCompare").click();
+                 hideComparePanel();
+                });
+
+                function hideComparePanel() {
+                    if (!list.length) {
+                    $(".comparePan").empty();
+                    $(".comparePanle").hide();
+                    }
+                 }
+            </code></pre>
+        </div>
+    </div>
+
+</body>
+
+</html>
