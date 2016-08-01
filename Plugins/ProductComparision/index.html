@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="fb:app_id" content="1067931556616985" />
     <meta property="og:url" content="https://rajeshpeddalachugari.github.io/Plugins/ProductComparision/" />
-<meta property="og:type"  content="article" />
-<meta property="og:title" content="Product Comparision using jQuery"/>
-<meta property="og:description" content="This jQuery plugin helps users to select products for comparision" />
-<meta property="og:image"  content="https://rajeshpeddalachugari.github.io/Plugins/ProductComparision/images/comparepanel.PNG" />
-    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Product Comparision using jQuery" />
+    <meta property="og:description" content="This jQuery plugin helps users to select products for comparision" />
+    <meta property="og:image" content="https://rajeshpeddalachugari.github.io/Plugins/ProductComparision/images/banner1.PNG" />
+
     <link href="css/w3.css" rel="stylesheet">
     <link href="css/prism.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
@@ -131,13 +131,11 @@
             <h4><b>Method to select product for comparision and add them to preview panel</b></h4>
             <pre><code class="language-javascript">
              /* function to be executed when product is selected for comparision*/
-
     $(document).on('click', '.addToCompare', function () {
         $(".comparePanle").show();
         $(this).toggleClass("rotateBtn");
         $(this).parents(".selectProduct").toggleClass("selected");
         var productID = $(this).parents('.selectProduct').attr('data-title');
-
         var inArray = $.inArray(productID, list);
         if (inArray < 0) {
             if (list.length > 2) {
@@ -149,14 +147,10 @@
                 $(this).parents(".selectProduct").toggleClass("selected");
                 return;
             }
-
             if (list.length < 3) {
                 list.push(productID);
-
                 var displayTitle = $(this).parents('.selectProduct').attr('data-id');
-
                 var image = $(this).siblings(".productImg").attr('src');
-
                 $(".comparePan").append('&lt;div id="' + productID + '" class="relPos titleMargin w3-margin-bottom   w3-col l3 m4 s4"&gt;&lt;div class="w3-white titleMargin"&gt;&lt;a class="selectedItemCloseBtn w3-closebtn cursor"&gt;&times&lt;/a&gt;&lt;img src="' + image + '" alt="image" style="height:100px;"/&gt;&lt;span id="' + productID + '" class="titleMargin1"&gt;' + displayTitle + '&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;');
             }
         } else {
@@ -164,17 +158,14 @@
             var prod = productID.replace(" ", "");
             $('#' + prod).remove();
             hideComparePanel();
-
         }
         if (list.length > 1) {
-
             $(".cmprBtn").addClass("active");
             $(".cmprBtn").removeAttr('disabled');
         } else {
             $(".cmprBtn").removeClass("active");
             $(".cmprBtn").attr('disabled', '');
         }
-
     });
             </code></pre>
             <h4><b>Method to add selected products to comparision panel</b></h4>
@@ -183,7 +174,6 @@
         if ($(".cmprBtn").hasClass("active")) {
             /* this is to print the  features list statically*/
             $(".contentPop").append('&lt;div class="w3-col s3 m3 l3 compareItemParent relPos">' + '&lt;ul class="product">' + '&lt;li class=" relPos compHeader">&lt;p class="w3-display-middle">Features&lt;/p>&lt;/li>' + '&lt;li>Title&lt;/li>' + '&lt;li>Size&lt;/li>' + '&lt;li>Weight&lt;/li>' + '&lt;li class="cpu">Processor&lt;/li>' + '&lt;li>Battery&lt;/li>&lt;/ul>' + '&lt;/div>');
-
             for (var i = 0; i < list.length; i++) {
                 /* this is to add the items to popup which are selected for comparision */
                 product = $('.selectProduct[data-title="' + list[i] + '"]');
@@ -208,7 +198,6 @@
         list.length = 0;
         $(".rotateBtn").toggleClass("rotateBtn");
     });
-
             </code></pre>
             <h4><b>remove items from preview panel</b></h4>
             <pre><code class="language-javascript">
@@ -218,7 +207,6 @@
                  $('[data-title=' + test + ']').find(".addToCompare").click();
                  hideComparePanel();
                 });
-
                 function hideComparePanel() {
                     if (!list.length) {
                     $(".comparePan").empty();
@@ -228,34 +216,34 @@
             </code></pre>
         </div>
     </div>
-        <div class="w3-container w3-yellow w3-padding">
-    <h3 class="w3-border-bottom w3-border-black">Author</h3>
-    <div class="w3-row">
-        <div class="w3-col l1 m2 s4">
-            <img src="../../images/profile.jpg" style="width:120px" class="w3-padding w3-round-xlarge">
+    <div class="w3-container w3-yellow w3-padding">
+        <h3 class="w3-border-bottom w3-border-black">Author</h3>
+        <div class="w3-row">
+            <div class="w3-col l1 m2 s4">
+                <img src="../../images/profile.jpg" style="width:120px" class="w3-padding w3-round-xlarge">
+            </div>
+            <div class="w3-col l11 m10 s8">
+                <h3 class="author">Rajesh</h3>
+                <p class="author"> web developer, working as Senior Software Analyst at Hexagon</p>
+            </div>
         </div>
-        <div class="w3-col l11 m10 s8">
-            <h3 class="author">Rajesh</h3>
-            <p class="author"> web developer, working as Senior Software Analyst at Hexagon</p>
-        </div>
+
+
+
     </div>
-    
-    </div
-    </div>
-    </div>
-  
+
     <div class="w3-container w3-center w3-yellow">
-    <div class="w3-row">
-    <div class="w3-col l12">
-    <div class="w3-center">
-    <a href="https://www.facebook.com/rajeshpeddalachugari" target="_blank"><i class="fa fa-facebook w3-xxlarge w3-padding" aria-hidden="true"></i></a>
-    <a href="https://rajeshpeddalachugari.github.io/" target="_blank"><i class="fa fa-home w3-xxlarge w3-padding" aria-hidden="true"></i></a>
-    <a href="https://github.com/rajeshpeddalachugari" target="_blank"><i class="fa fa-github w3-xxlarge w3-padding" aria-hidden="true"></i></a>
+        <div class="w3-row">
+            <div class="w3-col l12">
+                <div class="w3-center">
+                    <a href="https://www.facebook.com/rajeshpeddalachugari" target="_blank"><i class="fa fa-facebook w3-xxlarge w3-padding" aria-hidden="true"></i></a>
+                    <a href="https://rajeshpeddalachugari.github.io/" target="_blank"><i class="fa fa-home w3-xxlarge w3-padding" aria-hidden="true"></i></a>
+                    <a href="https://github.com/rajeshpeddalachugari" target="_blank"><i class="fa fa-github w3-xxlarge w3-padding" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
-    </div>
-  
+
 </body>
 
 </html>
