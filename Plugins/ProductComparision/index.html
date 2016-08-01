@@ -9,7 +9,7 @@
     <meta property="og:url" content="https://rajeshpeddalachugari.github.io/Plugins/ProductComparision/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Product Comparision using jQuery" />
-    <meta property="og:description" content="This jQuery plugin helps users to select products for comparision" />
+    <meta property="og:description" content="This jQuery plugin helps users to select products for comparison" />
     <meta property="og:image" content="https://rajeshpeddalachugari.github.io/Plugins/ProductComparision/images/banner1.PNG" />
 
     <link href="css/w3.css" rel="stylesheet">
@@ -33,7 +33,7 @@
             </div>
             <div class="w3-col l8 s12">
                 <header class="w3-container">
-                    <h1>Add Products for comparision - jQuery</h1>
+                    <h1>Add Products for comparison - jQuery</h1>
                 </header>
             </div>
             <div class="w3-col l3 s12">
@@ -48,14 +48,14 @@
     </div>
     <div class="w3-container  w3-light-grey">
         <p><i class="fa fa-calendar w3-padding-right" aria-hidden="true"></i>August 1,2016</p>
-        <h3>This jQuery plugin helps users to select products for comparision</h3>
+        <h3>This jQuery plugin helps users to select products for comparison</h3>
         <div class="w3-container">
             <h3><b>Creating HTML content</b></h3>
             <p>This section consists of three parts : </p>
             <ul>
                 <li>Creating markup for products</li>
                 <li>Creating preview panel</li>
-                <li>Creating popup to view items selected for comparision</li>
+                <li>Creating popup to view items selected for comparison</li>
             </ul>
             <h4><b>Creating markup for products</b></h4>
             <p>Use data-* attribute to add properties to product for ex: use <span class="w3-tag w3-teal">data-title</span> to add title of product</p>
@@ -116,7 +116,7 @@
                 <img src="images/previewpanel.PNG" class="previewImage">
             </div>
             <h4><b>Creating Comparision popup</b></h4>
-            <p>This pop is full screen popup which is used to view the comparision of products</p>
+            <p>This pop is full screen popup which is used to view the comparison of products</p>
             <p> modal popup is created using W3.css framework. and css class is <span class="w3-tag w3-teal">w3-modal</span></p>
             <pre><code class="language-html">
               &lt;div id="id01" class="w3-animate-zoom w3-white w3-modal modPos">
@@ -131,9 +131,9 @@
                 <img src="images/comparepanel.PNG" style="width:100%">
             </div>
             <h3><b>jQuery part</b></h3>
-            <h4><b>Method to select product for comparision and add them to preview panel</b></h4>
+            <h4><b>Method to select product for comparison and add them to preview panel</b></h4>
             <pre><code class="language-javascript">
-             /* function to be executed when product is selected for comparision*/
+             /* function to be executed when product is selected for comparison*/
     $(document).on('click', '.addToCompare', function () {
         $(".comparePanle").show();
         $(this).toggleClass("rotateBtn");
@@ -171,14 +171,14 @@
         }
     });
             </code></pre>
-            <h4><b>Method to add selected products to comparision panel</b></h4>
+            <h4><b>Method to add selected products to comparison panel</b></h4>
             <pre><code class="language-javascript">
              $(document).on('click', '.cmprBtn', function () {
         if ($(".cmprBtn").hasClass("active")) {
             /* this is to print the  features list statically*/
             $(".contentPop").append('&lt;div class="w3-col s3 m3 l3 compareItemParent relPos">' + '&lt;ul class="product">' + '&lt;li class=" relPos compHeader">&lt;p class="w3-display-middle">Features&lt;/p>&lt;/li>' + '&lt;li>Title&lt;/li>' + '&lt;li>Size&lt;/li>' + '&lt;li>Weight&lt;/li>' + '&lt;li class="cpu">Processor&lt;/li>' + '&lt;li>Battery&lt;/li>&lt;/ul>' + '&lt;/div>');
             for (var i = 0; i < list.length; i++) {
-                /* this is to add the items to popup which are selected for comparision */
+                /* this is to add the items to popup which are selected for comparison */
                 product = $('.selectProduct[data-title="' + list[i] + '"]');
                 var image = $('[data-title=' + list[i] + ']').find(".productImg").attr('src');
                 var title = $('[data-title=' + list[i] + ']').attr('data-id');
@@ -189,7 +189,7 @@
         $(".modPos").show();
     });
             </code></pre>
-            <h4><b>actions to be performed when comparision popup is closed</b></h4>
+            <h4><b>actions to be performed when comparison popup is closed</b></h4>
             <pre><code class="language-javascript">
             $(document).on('click', '.closeBtn', function () {
         $(".contentPop").empty();
