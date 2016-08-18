@@ -4,6 +4,11 @@ html,body{
    
     
 }
+@media only screen and (max-width:335px){
+html,body{
+    font-size:12px !important;
+}
+}
 h1,h2,h3,h4,ul,li,p{
     font-family: 'Slabo 27px', serif;
 }
@@ -42,4 +47,10 @@ p,li{
    .previewImage{
     width: 100%;
 } 
+}
+
+@media only screen and (max-width:335px){
+html,body{
+    font-size:12px !important;
+}
 }
