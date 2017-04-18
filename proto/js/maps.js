@@ -14,11 +14,28 @@ $(".init").click(function () {
 
 setTimeout(function () {
     $('.splashScreen').fadeOut('fast');
-}, 5000);
+}, 1000);
 
 $(".sos").click(function () {
     $("#ReqModal").show();
 });
+
+$(".chat").click(function () {
+    $("#chatModal").show();
+});
+
+$(".sendmessage").click(function () {
+    showToast();
+    $("#chatModal").hide();
+});
+
+function showToast() {
+    
+    var x = document.getElementById("snackbar")
+    x.className = "show";
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+   
+}
 
 $(".modalclose").click(function () {
 
