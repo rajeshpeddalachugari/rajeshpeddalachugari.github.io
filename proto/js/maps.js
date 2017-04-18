@@ -56,7 +56,7 @@ $(".modalclose").click(function () {
     $("#ReqModal").hide();
     $(".reqIdpanel").show();
     $(".mapholder").toggleClass("w3-margin-top");
-    $("#mapholder").css("height", "62vh");
+    $("#mapholder").css("height", "66vh");
 });
 
 var x = document.getElementById("demo");
@@ -72,7 +72,7 @@ function showPosition(position) {
     lon = position.coords.longitude;
     latlon = new google.maps.LatLng(lat, lon)
     mapholder = document.getElementById('mapholder')
-    mapholder.style.height = '73vh';
+    mapholder.style.height = '75vh';
     mapholder.style.width = '100%';
 
     var myOptions = {
