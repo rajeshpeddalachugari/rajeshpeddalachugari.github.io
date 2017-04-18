@@ -20,10 +20,12 @@
 }
 .customfont{
     font-family: 'Fredoka One', cursive;
-    font-weight:100 !important;
+    /*font-weight:100 !important;*/
+    font-weight:100;
 }
 .header{
-    background-color:#255377;
+    font-family: 'Roboto Slab',Georgia, serif;
+    background-color:#3f6db9;
     color:white;
 }
 .menuItems{

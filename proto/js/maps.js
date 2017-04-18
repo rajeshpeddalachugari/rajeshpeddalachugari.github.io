@@ -1,44 +1,6 @@
 /// <reference path="jquery-3.2.0.min.js" />
 
 
-//var x = document.getElementById("demo");
-//window.onload = function (e) {
-//    getLocation();
-//};
-//function getLocation() {
-//    if (navigator.geolocation) {
-//        navigator.geolocation.getCurrentPosition(showPosition, showError);
-//    } else {
-//        x.innerHTML = "Geolocation is not supported by this browser.";
-//    }
-//}
-
-//function showPosition(position) {
-//    var latlon = position.coords.latitude + "," + position.coords.longitude;
-
-//    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-//    + latlon + "&zoom=14&size=400x300&sensor=false&key=AIzaSyAUpb6jaGl9tnqkV_-73hzQfMc20NY3rpQ";
-//    document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
-//}
-////To use this code on your website, get a free API key from Google.
-////Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
-
-//function showError(error) {
-//    switch (error.code) {
-//        case error.PERMISSION_DENIED:
-//            x.innerHTML = "User denied the request for Geolocation."
-//            break;
-//        case error.POSITION_UNAVAILABLE:
-//            x.innerHTML = "Location information is unavailable."
-//            break;
-//        case error.TIMEOUT:
-//            x.innerHTML = "The request to get user location timed out."
-//            break;
-//        case error.UNKNOWN_ERROR:
-//            x.innerHTML = "An unknown error occurred."
-//            break;
-//    }
-//}
 
 
 
@@ -48,6 +10,22 @@ window.onload = function (e) {
 
 $(".init").click(function () {
     $(".splashScreen").fadeOut("slow");
+});
+
+setTimeout(function () {
+    $('.splashScreen').fadeOut('fast');
+}, 5000);
+
+$(".sos").click(function () {
+    $("#ReqModal").show();
+});
+
+$(".modalclose").click(function () {
+
+    $("#ReqModal").hide();
+    $(".reqIdpanel").show();
+    $(".mapholder").toggleClass("w3-margin-top");
+    $("#mapholder").css("height", "62vh");
 });
 
 var x = document.getElementById("demo");
@@ -63,7 +41,7 @@ function showPosition(position) {
     lon = position.coords.longitude;
     latlon = new google.maps.LatLng(lat, lon)
     mapholder = document.getElementById('mapholder')
-    mapholder.style.height = '62vh';
+    mapholder.style.height = '73vh';
     mapholder.style.width = '100%';
 
     var myOptions = {
