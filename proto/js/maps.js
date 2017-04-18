@@ -29,6 +29,20 @@ $(".sendmessage").click(function () {
     $("#chatModal").hide();
 });
 
+$(".voiceRecording").click(function (e) {
+    e.preventDefault();
+    $(".voiceRecordingCard").fadeIn(300, function () { $(this).focus(); });
+});
+
+$('.close').click(function () {
+    $(".popup").fadeOut(300);
+});
+$(".voiceRecordingCard").on('blur', function () {
+    $(this).fadeOut(300);
+});
+
+
+
 function showToast() {
     
     var x = document.getElementById("snackbar")
