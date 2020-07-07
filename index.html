@@ -15,8 +15,12 @@
       src="https://kit.fontawesome.com/a5137f17ed.js"
       crossorigin="anonymous"
     ></script>
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Athiti|Nunito|Slabo+27px"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap"
       rel="stylesheet"
     />
     <script src="js/jquery-1.8.3.min.js"></script>
@@ -47,6 +51,17 @@
       ga("send", "pageview");
     </script>
     <!--<script src="//fast.eager.io/XrkAK_uGGp.js"></script>-->
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Roboto Slab", serif;
+      }
+    </style>
   </head>
 
   <body>
@@ -89,9 +104,9 @@
         />Education</a
       >
       <a
-        onclick="$('#Articles').animatescroll({onScrollStart:function(){},onScrollEnd:w3_close()})"
+        onclick="$('#Projects').animatescroll({onScrollStart:function(){},onScrollEnd:w3_close()})"
         class="w3-padding-16 w3-hover-teal"
-        ><img class="w3-padding-right" src="images/article.png" />Articles</a
+        ><img class="w3-padding-right" src="images/article.png" />Projects</a
       >
       <a
         onclick="$('#ContactME').animatescroll({onScrollStart:function(){},onScrollEnd:w3_close()})"
@@ -297,20 +312,61 @@
         </div>
       </div>
 
-      <div id="Articles" class="w3-container content w3-deep-orange overflow">
-        <h2 class="w3-center">Articles</h2>
+      <div id="Projects" class="w3-container content w3-deep-orange overflow">
+        <h2 class="w3-center">Projects</h2>
         <div class="w3-container">
-          <div class="w3-row">
-            <a
-              href="https://rajeshpeddalachugari.github.io/Plugins/ProductComparision/"
-              ><div class="w3-col l3 w3-card-8">
+          <div class="w3-row-padding w3-center">
+            <div class="w3-col l3">
+              <div class="w3-card-4 w3-light-grey w3-round-large">
                 <img
-                  src="Plugins/ProductComparision/images/banner.PNG"
+                  src="images/articles/productComparision.PNG"
                   style="width: 100%;"
                 />
-                <h4 class="w3-padding w3-center">Product Comparision</h4>
-              </div></a
-            >
+                <h4 class="w3-padding w3-border-bottom">Product Comparision</h4>
+                <a
+                  href="https://rajeshpeddalachugari.github.io/Demos/ProductComparision/"
+                  target="_blank"
+                >
+                  <i class="fas w3-padding w3-large fa-desktop"></i>
+                </a>
+                <a
+                  href="https://rajeshpeddalachugari.github.io/Plugins/ProductComparision/download/ProductComparision.zip"
+                >
+                  <i class="fab w3-padding w3-large fa-github"></i>
+                </a>
+                <a
+                  href="https://rajeshpeddalachugari.github.io/Plugins/ProductComparision/"
+                  target="_blank"
+                >
+                  <i class="far fa-newspaper w3-padding w3-large"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="w3-col l3">
+              <div class="w3-card-4 w3-light-grey w3-round-large">
+                <img src="images/articles/notesApp.PNG" style="width: 100%;" />
+                <h4 class="w3-padding w3-border-bottom">Notes App</h4>
+                <a
+                  href="https://rajeshpeddalachugari.github.io/Vuexfire-NotesApp/"
+                  target="_blank"
+                >
+                  <i class="fas w3-padding w3-large fa-desktop"></i>
+                </a>
+                <a
+                  href="https://github.com/rajeshpeddalachugari/Vuexfire-NotesAppCode"
+                  target="_blank"
+                >
+                  <i class="fab w3-padding w3-large fa-github"></i>
+                </a>
+                <a
+                  href="https://dev.to/rajesh5522/how-to-use-vuexfire-vue-notes-applicaiton-e44"
+                  target="_blank"
+                >
+                  <i class="far fa-newspaper w3-padding w3-large"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
